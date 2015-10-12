@@ -1,0 +1,160 @@
+\documentclass{tufte-handout}
+
+\title{Python 101}
+
+\author[The Academy]{Ilya Michurin}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+  
+  
+  
+    %MADNESS
+  
+  \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{mathtools}% http://ctan.org/pkg/mathtools
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{units}% To use \nicefrac
+\usepackage{cancel}% To use \cancel
+%\usepackage{physymb}%To use r
+\usepackage{sectsty} % Allows customizing section commands
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgf,tikz}%To draw 
+\usepackage{pgfplots}%To draw 
+\usetikzlibrary{shapes,arrows}%To draw 
+\usetikzlibrary{patterns,fadings}
+ \usetikzlibrary{decorations.pathreplacing}%To draw curly braces 
+ \usetikzlibrary{snakes}%To draw 
+ \usetikzlibrary{spy}%To do zoom-in
+ \usepackage{setspace}%Set margins and such
+ %\usepackage{3dplot}%To draw in 3D
+\usepackage{framed}%To get shade behind text
+
+
+
+\definecolor{shadecolor}{rgb}{0.9,0.9,0.9}%setting shade color
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+  
+  
+
+  
+  
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\begin{document}
+
+\maketitle % Print the title section
+
+
+\normalsize
+
+\vspace{1cm}
+
+\vspace{1cm}
+
+
+\section{Main Menu - Program Code}
+
+\marginnote[40pt]{
+First code changes your number from base 4 to base 2
+
+we have to give a definition to the factors that we use in this, c for number, b for base, and etc.
+
+First, we write that our number has to be bigger than a converted base 
+
+After, step by step, we are giving a definition to a new factors that at the end will show us a new number in the base that we chose to convert
+
+But in the line ans=str(n)+ans we want our answer to be a string
+
+At the end we need a basic command print ans to show us our answer, therefore our converted number from Base 4 to Base 2 
+
+Second code is used to convert numbers from Base 4 to Base 10
+
+Actually, this code is pretty same than one that we had before, but here we give a definition L with command len() that means we return the length (the number of items)
+
+To find the answer we have to take our number as an integer 
+
+And after we right a formula for our exponent 
+
+The easiest and the last step is to print ans 
+
+And work is done
+
+
+}
+
+\begin{framed}
+\begin{verbatim}
+c=5112
+a=5112
+b=2
+e=0
+ans=""
+while c>(b**e):
+    m=a%(b**(e+1))
+    n=m/(b**e)
+    ans=str(n)+ans
+    a=a-m
+    e=e+1
+print ans
+
+c="3111"
+l=len(c)
+b=4
+e=0
+ans=0
+while e<l:
+    ans=ans+int(c[l-1-e])*(b**e)
+    e=e+1
+print ans
+
+
+\end{verbatim}
+\end{framed}
+
+\marginnote[40pt]{This is the output of the lines of code above.}
+
+\begin{shaded}
+\begin{verbatim}
+
+Enter base:  4
+Enter Number to convert:  135
+135 becomes  2 0 1 3 
+
+\end{verbatim}
+\end{shaded}
+
+
+
+\vspace{1cm}
+
+\bibliography{sample-handout}
+\bibliographystyle{plainnat}
+
+
+
+\end{document}
